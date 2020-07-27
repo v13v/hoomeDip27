@@ -18,7 +18,6 @@ import showBlock from './modules/showBlock';
 import calcAccordion from './modules/calcAccordion';
 import consult from './modules/consult';
 
-
 consult();
 calcAccordion();
 showBlock();
