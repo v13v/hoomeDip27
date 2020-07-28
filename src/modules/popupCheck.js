@@ -19,8 +19,7 @@ const popupCheck = () => {
         if (!target){
             popupCheckModal.style.display = 'none';
      } 
-     });
-    
+     });   
     };
     
     export default popupCheck;

@@ -10,6 +10,5 @@ const hidden = document.querySelectorAll('.hidden'),
       addSentenceBtn.style.display ='none';  
     });
     });
-
 };
 export default showBlock;

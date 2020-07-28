@@ -1,25 +1,26 @@
-const calc = (data) => {
+const calc = data => {
     const calcResult = document.getElementById('calc-result');
-//console.log(+!data.type +1);
-const type = +!data.type +1
-const count =  (+!data.type +1 === 1) ? 10000 : 150000;
-const diamCount = data.diamCount[0] || 0;
-const diam = data.diam[0] || 0;
+    const startingPrice = (data.type) ? 10000 : 15000
+    let sum = startingPrice
 
- const bottom = (data.bottom) ? 1000 : 0;
-    let sum = count;
-    if(type === 1){
-        console.log((count * data.diam[0]));
-        console.log(count * diamCount );
-      sum = count + (count * diam) +(count * diamCount ) + bottom;
-    
-//console.log(data);
-
-    }else {
-        sum = count + (count * diam * 2) +(count * diamCount * 2) + bottom *2;
-       console.log(data.diam[0]);  
+    const checkBottom = () => {
+        let res;
+        if(data.bottom) {
+            if(data.type) {
+                res = 1000
+            } else {
+                res = 2000
+            }
+        } else {
+            res = 0
+        }
+        return res
     }
-calcResult.value = sum;
-//console.log(data);
+
+    checkBottom()
+
+    sum = startingPrice + (startingPrice * data.diam) + (startingPrice * data.diamCount) + checkBottom()
+
+    calcResult.value = sum
 }
 export default calc

@@ -56,8 +56,6 @@ const submissionForm =() => {
                 });
         });
     });
-
 };
-
 
 export default submissionForm;
